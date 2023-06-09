@@ -4,17 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokedexComponent } from './views/pokedex/pokedex.component';
-import { PokemoncardComponent } from './components/pokemoncard/pokemoncard.component';
 import { PokemonDescriptionComponent } from './views/pokemon-description/pokemon-description.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FavoritesComponent } from './views/favorites/favorites.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokedexComponent,
-    PokemoncardComponent,
-    PokemonDescriptionComponent
+    PokemonDescriptionComponent,
+    FavoritesComponent,
   ],
   imports: [
     BrowserModule,

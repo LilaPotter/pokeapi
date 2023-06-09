@@ -8,4 +8,6 @@ export interface PokedexInterface {
 export interface ResultInterface {
     name: string;
     url:  string;
+    foto: string;
+
 }

@@ -1,5 +1,42 @@
-<p>pokedex works!</p>
+<div class="container-md mt-2 rounded border px-4 py-2  ">
+    <div class="row">
+        <div class="col-10"></div>
+        <div class="col-2 fav"><a routerLink="/favorites">Mis Favoritos ♥</a></div>
+    </div>
+</div>
+    
+     <div class="container-md mt-2 rounded border px-4 py-2  ">
+        <div class="row row-cols-1 row-cols-md-5">
+            <div class="col" *ngFor="let pokemon of pokemones.results">
+                
+              <div class="card mb-4 ">
+                 <div class="card-body ">
+                    <div class="row">
+                        <div class="col-10 poke card "><span routerLink="/pokemon-description/{{pokemon.name}}">{{pokemon.name + ' '}}</span></div>
+                        <div class="col-2 fav"><span class="ml-3" (click)="agregarPokemonFavorito(pokemon.name)">♥</span></div>
+                        <img [src]="pokemon.foto" routerLink="/pokemon-description/{{pokemon.name}}">
+                    </div>
+                </div> 
+              </div>
+            </div>
+          </div>
+     </div>
+    
+ <div class="container-md mt-2 rounded border px-4 py-2 ">
 
-<button (click)="getPokemones()">
-    Get pokemons
-    </button>
+     <nav aria-label="Page navigation example">
+         <ul class="pagination">
+             <li class="page-item">
+             <a class="page-link" href="#" aria-label="Previous">
+                 <span aria-hidden="true">&laquo;</span>
+             </a>
+             </li>
+
+             <li class="page-item">
+             <a class="page-link"  aria-label="Next"  style="cursor: pointer;" (click)="getPokemones()">
+                 <span aria-hidden="true">&raquo;</span>
+             </a>
+             </li>
+         </ul>
+         </nav>
+ </div>

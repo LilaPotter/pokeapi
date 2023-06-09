@@ -1,4 +1,76 @@
-<p>pokemon-description works!</p>
+<div class="container-md mt-2 rounded border px-4 py-2  ">
+    <div class="row">
+        <div class="col-10"></div>
+        <div class="col-2 fav"><a routerLink="/pokedex">Home</a></div>
+        
+    </div>
+</div>
 
-<h1>{{namePokemon}}</h1>
-<img src="{{pokemon.sprites.front_default}}" alt="">
+<div class="container-md mt-2 rounded border px-4 py-2" style="width: 500px;">
+    <div class="card bg-light">
+      <div class="card-body">
+  
+        <div class="row align-items-center justify-content-center">
+          <div class="col-12 text-center">
+            <h5 class="card-title text-primary">{{pokemon?.name}}</h5>
+          </div>
+          <div class="col-12 text-center">
+            <img [src]="pokemon.sprites?.front_default" alt="">
+          </div>
+        </div>
+  
+        <div class="card bg-secondary text-white mt-3">
+          <div class="card-body">
+  
+            <div class="row">
+              <div class="col-6">
+                <p class="mb-0"><strong>Número en Pokedex:</strong> {{pokemon.order}}</p>
+              </div>
+              <div class="col-6">
+                <p class="mb-0"><strong>Peso:</strong> {{pokemon.height}}</p>
+              </div>
+              <div class="col-6">
+                <p class="mb-0"><strong>Altura:</strong> {{pokemon.weight}}</p>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                        <p class="mb-0"><strong>Habilidades:</strong></p>
+
+                      <div class="col-6" *ngFor="let ability of pokemon.abilities">
+                        {{ ability.ability.name }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+  
+        <div class="row mt-3">
+          <div class="col-12">
+            <h6 class="text-primary">Juegos:</h6>
+          </div>
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-6 col-md-3" *ngFor="let game of pokemon.game_indices">
+                    {{ game.version.name }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

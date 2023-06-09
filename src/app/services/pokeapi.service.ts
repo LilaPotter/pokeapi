@@ -20,9 +20,11 @@ export class PokeapiService {
                     .pipe(tap(() => this.offset += 20
                     ))
   }
+
   getPokemonByName(name: string): Observable<PokemonInterface>{
     return this.http.get<PokemonInterface>(`https://pokeapi.co/api/v2/pokemon/${name}/`)
   }
+  
   getPokemonsGames(name: string){
     return this.http.get<any>(`https://pokeapi.co/api/v2/version/${name}/`)
   }
